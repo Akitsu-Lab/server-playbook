@@ -1,0 +1,3 @@
+# ansible_ssh_userを各自のユーザー名に変更
+[webservers]
+164.70.69.3 ansible_ssh_user=sota 
