@@ -4,6 +4,7 @@
   ansible.builtin.dnf:
     name: nginx
     state: present
+    update_cache: yes
   tags: nginx
 
 # nginx.confを設置
