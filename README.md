@@ -1,9 +1,24 @@
 # server-playbook
 
-## 疎通確認
+## 準備
+dev_hostsのユーザー名を修正する
+```shell
+# ansible_ssh_userを各自のユーザー名に変更
+[webservers]
+164.70.69.3 ansible_ssh_user=<ユーザー名>
+```
+
+## サーバーとの疎通確認
 
 ```shell
 ansible webservers -i dev_hosts -m ping
+```
+
+## 実行
+実行する場合は -C を外す
+```shell
+# ドライラン
+ansible-playbook webservers-playbook.yml -i dev_hosts -K -C
 ```
 
 ## 新規ロール作成
@@ -13,12 +28,6 @@ ansible-galaxy init role_name
 ```
 - [公式Doc](https://docs.ansible.com/ansible/2.9_ja/galaxy/dev_guide.html)
 
-
-## 実行
-
-```shell
-ansible-playbook webservers-playbook.yml -i dev_hosts -K -C
-```
 
 ## 参考
 
