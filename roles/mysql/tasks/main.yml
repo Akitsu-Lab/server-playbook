@@ -1,0 +1,33 @@
+---
+# MySQLがない場合、インストール
+- name: install mysql
+  ansible.builtin.dnf:
+    name: mysql-server
+    state: present
+    update_cache: yes
+  tags: mysql
+
+# テーブル作成.sqlファイルをコピー
+- name: copy create.sql
+  ansible.builtin.copy:
+    src: create.sql
+    dest: /tmp/create.sql
+    owner: root
+    group: root
+    mode: 0644
+
+# サンプルデータ.sqlファイルをコピー
+- name: copy sample.sql
+  ansible.builtin.copy:
+    src: sample.sql
+    dest: /tmp/sample.sql
+    owner: root
+    group: root
+    mode: 0644
+
+# MySQLが起動していない場合、起動する
+- name: start mysql
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: yes
