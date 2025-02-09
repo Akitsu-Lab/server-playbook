@@ -2,9 +2,9 @@ USE soto;
 
 -- accounts テーブルにサンプルデータを挿入
 INSERT INTO accounts (account_name, balance) VALUES
-('John Doe', 1000),
-('Jane Smith', 500),
-('Alice Brown', 1500);
+('John', 1000),
+('Smith', 500),
+('Brown', 1500);
 
 -- events テーブルにサンプルデータを挿入
 INSERT INTO events (option_count, winning_number, prize_money, is_selling, end_sale_date) VALUES
