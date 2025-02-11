@@ -1,5 +1,9 @@
 USE soto;
 
+DELETE FROM purchases;
+DELETE FROM events;
+DELETE FROM accounts;
+
 -- accounts テーブルにサンプルデータを挿入
 INSERT INTO accounts (account_name, balance) VALUES
 ('John', 1000),

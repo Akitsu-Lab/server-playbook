@@ -38,3 +38,16 @@ ansible-galaxy init role_name
 ### ディレクトリ構造
 
 - [ansibleのディレクトリ構造](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html)
+
+### mysql準備
+
+```sql
+# 外部接続用のユーザー作成
+CREATE USER 'soto'@'%' IDENTIFIED BY '<パスワード>';
+
+# sotoデータベースの外部からの接続を許可
+GRANT ALL PRIVILEGES ON soto.* TO 'soto'@'%';
+
+# 確認
+show grants for 'soto'@'%';
+```
