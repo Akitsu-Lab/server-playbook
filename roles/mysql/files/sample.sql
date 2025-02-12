@@ -1,8 +1,13 @@
 USE soto;
 
-DELETE FROM purchases;
-DELETE FROM events;
-DELETE FROM accounts;
+-- 外部キー制約を一時的に無効化
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE TABLE purchases;
+TRUNCATE TABLE events;
+TRUNCATE TABLE accounts;
+
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- accounts テーブルにサンプルデータを挿入
 INSERT INTO accounts (account_name, balance) VALUES
