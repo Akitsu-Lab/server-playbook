@@ -5,3 +5,18 @@
     name: java-21-openjdk
     state: present
     update_cache: yes
+
+- name: install git
+  ansible.builtin.dnf:
+    name: git
+    state: present
+    update_cache: yes
+
+- name: git clone
+  ansible.builtin.git:
+    repo: https://github.com/Akitsu-Lab/soto-ui.git
+    dest: /home/sota/soto-ui
+
+- name: install volta
+  ansible.builtin.uri:
+    url: https://get.volta.sh
