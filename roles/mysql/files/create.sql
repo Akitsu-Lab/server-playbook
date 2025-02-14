@@ -10,7 +10,7 @@ USE soto;
 CREATE TABLE accounts (
     account_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     account_name VARCHAR(255) NOT NULL UNIQUE,
-    balance INT DEFAULT 5000,                              -- 残高
+    balance INT DEFAULT 5000,                           -- 残高
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,      -- 作成した日時を自動入力
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 更新した日時を自動入力 https://dev.mysql.com/doc/refman/8.0/ja/timestamp-initialization.html
 );
