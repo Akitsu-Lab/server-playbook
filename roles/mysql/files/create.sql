@@ -19,7 +19,7 @@ CREATE TABLE accounts (
 CREATE TABLE events (
     event_id INT AUTO_INCREMENT PRIMARY KEY,      -- 開催回のID (主キー)
     option_count INT NOT NULL,                     -- 選択肢の数
-    winning_number INT NOT NULL,                   -- 当選番号
+    winning_number INT DEFAULT NULL,                   -- 当選番号
     prize_money INT NOT NULL,                      -- 当選金額
     is_selling BOOLEAN NOT NULL DEFAULT TRUE,      -- 販売中かどうか
     end_sale_date DATETIME,                         -- 販売終了日時
